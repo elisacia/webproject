@@ -3,21 +3,31 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
-	<title>Document</title>
+	<title>LOVE CALCULATOR</title>
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+	<div id="modal">
+		<div id="modal_content">
+		<h2 id="nameModal">name1 name2</h2>
+		<p id="modal_Purcentage">100%</p>
+		<p id="modal_text">The beautiful text</p>
+		<input class="bold button95" id="button-back" type="submit" value="TRY AGAIN">
+
+		</div>
+	</div>
 	<form>
+		<h3>Please enter your fabulous name and the one of the love of your dreams</h3>
 		<ul>
 			<li>
-				<input class="input" id="name1" type="text" placeholder="Name 1" >
+				<input class="input" id="firstName" type="text" placeholder="Name 1" >
 			</li>
 			<li>
-				<input class="input" id="name2" type="text" placeholder="Name 2" >
+				<input class="input" id="secondName" type="text" placeholder="Name 2" onkeyup="changeName()">
 			</li>
 		</ul>
 		
-		<button type="submit" id="button">START</button>
+		<button type="submit" class="button95" id="button">START</button>
 	</form>
 	<script src="main.js"> </script>
 </body>

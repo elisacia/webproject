@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+*{
+	font-family: 'VT323',monospace ;
+	font-size: 1.1em;
+}
+
+#modal, #modal_content {
+	position: absolute;
+}
+
+#modal_content {
+	    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4%;
+    width: 40%;
+    left: 30%;
+    top: 19%;
+    height: 420px;
+    background-color: white;
+    z-index: 2;
+    justify-content: space-between;
+    box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 #fff, inset -2px -2px 0 0 #d3cfd4, inset 2px 2px 0 0 #efeeef;
+}
+
+#modal{
+	width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(255, 182, 207, 0.8);
+    z-index: 1;
+    display: none;
+}
+
+#modal.active {
+		display: initial!important;
+}
+
+#modal_Purcentage {
+	    font-size: 4em;
+    margin: 0;
+}
+
+h3 {
+	font-size: 2em;
+	text-align: center;
+    width: 65vw;
+}
+
+ul {
+	list-style: none;
+    display: flex;
+    width: 60%;
+    margin: auto;
+    justify-content: space-around;
+    padding-left: 0;
+}
+
+form {
+	    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+
+    margin-top: 10vh;
+    padding: 10px 80px;
+}
+
+.button95 {
+	background: #cac6cb;
+    box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 #fff, inset -2px -2px 0 0 #d3cfd4, inset 2px 2px 0 0 #efeeef;
+    text-transform : uppercase;
+    color: black;
+}
