@@ -1,25 +1,93 @@
 @import url('https://fonts.googleapis.com/css?family=VT323');
 
+
+/* 
+
+CONTENT :
+
+- SET
+- LAYOUT
+- STYLES
+- ANIMATIONS
+- RESPONSIVE / MEDIA QUERIE
+
+*/
+
+/* ------------ SET --------- */ 
+
 *{
 	font-family: 'VT323',monospace ;
 	font-size: 1.1em;
 }
 
-#modal, #modal_content {
+body {
+    display: flex;
+    margin: 0;
+    color: white;
+    background-image: url('img/backgif.gif');
+    background-size: contain;
+    background-color: black;
+    overflow: hidden;
+}
+
+/* --------- LAYOUT --------- */
+
+#modal {
 	position: absolute;
 }
 
-#modal_content {
-	    display: flex;
+#nameModal {
+    z-index: 3;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 4%;
-    width: 40%;
-    left: 30%;
-    top: 19%;
-    height: 420px;
+    justify-content: center;
+}
+
+.picture_percentage80, .picture_percentage100, .picture_percentage90, .picture_percentage70, .picture_percentage69, .picture_percentage60, .picture_percentage50, .picture_percentage40, .picture_percentage30, .picture_percentage20, .picture_percentage10 {
+    position:static;
+    height: 200px;
+    display:none;
+}
+
+.picture-active
+{
+    display:initial;
+}
+
+.container-timer{
+    position: absolute;
+    width: 320px;
+}
+
+#timer{
+    position: absolute;
+    top: 50px;
+}
+
+#timer.remove {
+    display: none;
+}
+
+
+#modal_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+    width: 320px;
+    left: 35%;
+    top: 20vh;
+    height: 500px;
     background-color: white;
     z-index: 2;
+    color: black !important;
     justify-content: space-between;
     box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 #fff, inset -2px -2px 0 0 #d3cfd4, inset 2px 2px 0 0 #efeeef;
 }
@@ -37,37 +105,55 @@
 		display: initial!important;
 }
 
-#modal_Purcentage {
-	    font-size: 4em;
-    margin: 0;
+
+/* --------- STYLES --------- */
+
+.input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 4px solid white;
+    color: #003fff;
+}
+
+.input:hover{
+    cursor: url(http://downloads.totallyfreecursors.com/thumbnails/ilovequestion1.gif), auto;
 }
 
 h3 {
-	font-size: 2em;
-	text-align: center;
-    width: 65vw;
+    font-size: 2em;
+    text-align: center;
 }
 
 ul {
-	list-style: none;
+    list-style: none;
     display: flex;
-    width: 60%;
+    width: 80%;
     margin: auto;
     justify-content: space-around;
     padding-left: 0;
 }
 
 form {
-	    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 5px solid #cac6cb;
+    border-top: 34px solid #cac6cb;
+    width: 700px;
+    margin: auto;
+    background-color: #f39fa9;
+
+}
+
+#percentage {
+    font-size: 4em;
+    margin: 0;
 }
 
 button {
-
-    margin-top: 10vh;
+    margin-top: 8vh;
     padding: 10px 80px;
+    margin-bottom: 5vh;
 }
 
 .button95 {
@@ -76,3 +162,131 @@ button {
     text-transform : uppercase;
     color: black;
 }
+
+.button95:hover {
+          box-shadow: inset 2px 2px 0 0 #b7b7b7;
+          cursor: url(http://downloads.totallyfreecursors.com/thumbnails/heart-arrow.gif), auto;
+}
+
+
+/* --------- ANIMATIONS  --------- */
+
+#modal.active #modal_content {
+        animation: swing 1s ease;
+}
+
+#text1 {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 2.5em;
+    color: white;
+    padding-left: 100%;
+    text-shadow: 0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,1), 0 0 30px rgba(255,255,255,1), 0 0 40px #ff9aa8, 0 0 70px #ff9aa8, 0 0 80px #ff9aa8, 0 0 100px #ff00de;
+     animation: textAnimate linear 12s infinite;    
+}
+
+#text1.topText{
+    top: 50px;
+}
+
+#text1.bottomText{
+    bottom: 50px;
+}
+
+#text1.topText.delay, #text1.bottomText.delay {
+    animation-delay: 6.2s;
+}
+
+@keyframes swing
+{
+    0%
+    {
+        opacity: 0;
+    }
+    15%
+    {
+        transform: translateX(10px);
+
+    }
+    30%
+    {
+        
+        transform: translateX(-10px);
+        opacity: 1;
+    }
+    50%
+    {
+        transform: translateX(5px);
+    }
+    65%
+    {
+        
+        transform: translateX(-5px);
+    }
+    80%
+    {
+        transform: translateX(3px);
+    }
+    100%
+    {
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes textAnimate
+{
+    0%
+    {
+        transform: translateX(0);
+    }
+
+    70%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+
+
+/* --------- RESPONSIVE / MEDIA QUERIE --------- */
+
+@media (max-width: 768px) {
+
+h3 {
+    font-size: 1.5em;
+}
+
+form {
+    width: 75vw;
+}
+
+ul {
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    margin-top: 5vh;
+}
+
+#text1 {
+    display: none;
+}
+
+ul > li:nth-child(2) {
+    margin-top: 30px;
+
+}
+
+ul > li > input {
+    text-align: center;
+}
+
+#modal_content {
+    left: 15%;
+}
+
+    }
