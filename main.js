@@ -73,6 +73,18 @@ function choseImage(percentage)
 				});		 
 			}
 
+			if((percentage >= 40) && (percentage <50))
+			{
+				const activePicture = document.querySelector('.picture_percentage40');
+				 activePicture.classList.add('picture-active');
+				
+				buttonBack.addEventListener("click", function(event) {
+				console.log("okay");
+				activePicture.classList.remove('picture-active');
+
+				});		 
+			}
+
 			if((percentage >= 50) && (percentage <60))
 			{
 				const activePicture = document.querySelector('.picture_percentage50');
